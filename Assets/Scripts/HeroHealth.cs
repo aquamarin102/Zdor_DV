@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Quest
 {
@@ -29,7 +28,7 @@ namespace Quest
 
         private void Die()
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         
         private void OnGUI()
