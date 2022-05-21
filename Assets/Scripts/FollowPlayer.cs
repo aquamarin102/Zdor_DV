@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,7 +13,7 @@ namespace Quest
         private HeroMove _player;
         private Animator _anim;
         
-        private string _isAttack = "isAttack";
+        private const string  _isAttack = "isAttack";
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
