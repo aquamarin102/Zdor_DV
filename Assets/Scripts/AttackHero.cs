@@ -22,10 +22,14 @@ namespace Quest
                 if (Input.GetMouseButton(0))
                 {
                     _anim.SetTrigger(_animAttack);
-                    Collider[] enemies = Physics.OverlapSphere(_attackPos.position, _attackRange, _enemy);
-                    for (int i = 0; i < enemies.Length; i++)
+                    var colliders = Physics.OverlapSphere(_attackPos.position, _attackRange, _enemy);
+                    foreach (var collider in colliders)
                     {
-                        enemies[i].GetComponent<Health>().Hit(_damage);
+                        var healthEnemy = collider.GetComponent<Health>();
+                        if (healthEnemy != null)
+                        {
+                            healthEnemy.Hit(_damage);
+                        }
                     }
                 }
                 _timeBtwAttack = _startTimeBtwAtack;

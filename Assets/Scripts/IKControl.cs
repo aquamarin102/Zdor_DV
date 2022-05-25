@@ -23,7 +23,7 @@ public class IKControl : MonoBehaviour
        if (_ikActive)
        {
            Vector3 distanceForLookPoint = _lookPoint.position - transform.position;
-           if (distanceForLookPoint.x <= _radiusLooking && distanceForLookPoint.x >= -_radiusLooking && distanceForLookPoint.y <= _radiusLooking && distanceForLookPoint.y >= -_radiusLooking && distanceForLookPoint.z <= _radiusLooking && distanceForLookPoint.z >= -_radiusLooking)
+           if (distanceForLookPoint.magnitude <= _radiusLooking)
            {
                _animator.SetLookAtWeight(1);
                _animator.SetLookAtPosition(_lookPoint.position);

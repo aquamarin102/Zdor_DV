@@ -4,6 +4,8 @@ namespace Quest
 {
     public class Health : MonoBehaviour
     {
+        [SerializeField] private Animator _animator;
+        
         [SerializeField] private float _maxHealth = 10f;
         [SerializeField] private float _curHealth;
         
@@ -41,7 +43,7 @@ namespace Quest
             foreach (Rigidbody rb in _rigidbodies)
             {
                 rb.isKinematic = false;
-                GetComponent<Animator>().enabled = false;
+                _animator.enabled = false;
             }
         }
     }
